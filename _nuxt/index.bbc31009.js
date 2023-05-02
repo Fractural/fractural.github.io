@@ -1,0 +1,1 @@
+import{a as o,b as n,e as t,F as a,f as c,o as s,h as _}from"./entry.f227bca7.js";const r={},d=c("div",null," body body body ",-1);function m(l,f){const e=_;return s(),n(a,null,[d,t(e,{name:"home"})],64)}const i=o(r,[["render",m]]);export{i as default};
