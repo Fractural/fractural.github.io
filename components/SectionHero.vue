@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { StyleValue } from 'nuxt/dist/app/compat/capi';
-import { fromURL } from '~/utils/format'
+import { fromURL } from '~/composables/format'
 
 const state = reactive({ headerHeight: 0 });
 const props = defineProps({

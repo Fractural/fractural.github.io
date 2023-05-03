@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { spaceText } from '~/utils/format';
+import { spaceText } from '~/composables/format';
 // @ts-ignore
 import Logo from '~/assets/svg/logo48.svg';
 

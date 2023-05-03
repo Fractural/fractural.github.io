@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { spaceText } from '~/utils/format';
+import { spaceText } from '~/composables/format';
 
 const props = defineProps({
   title: String

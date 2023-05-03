@@ -10,8 +10,7 @@ const url = 'https://fracturalstudios.com/';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // No need for ssr b/c we're generating a static site anyways
-  ssr: false,
+  ssr: true,
   // Basic configuration of the website
   app: {
     head: {
