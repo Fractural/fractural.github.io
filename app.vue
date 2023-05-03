@@ -3,19 +3,23 @@ const route = useRoute()
 </script>
 
 <template>
-  <Header />
-  <NuxtPage />
-  <h1>FOOT</h1>
-  <Footer />
+  <div class="bg-black text-white flex flex-col" style="min-height:100%">
+    <Header />
+    <NuxtPage class="flex-auto" />
+    <Footer />
+  </div>
 </template>
 
-<style>
+<style lang="scss">
 * {
-  font-family: 'Urbanist';
-  color: white;
+  font-family: 'Raleway';
+  font-weight: 300;
 }
 
-body {
-  background-color: black;
+html,
+body,
+#__nuxt {
+  height: 100%;
+  min-height: 100%;
 }
 </style>
