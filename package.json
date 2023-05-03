@@ -21,7 +21,6 @@
     "postcss": "^8.4.23",
     "sass": "^1.61.0",
     "sass-loader": "^10.4.1",
-    "vite-plugin-require": "^1.1.10",
     "vite-svg-loader": "^4.0.0"
   }
 }

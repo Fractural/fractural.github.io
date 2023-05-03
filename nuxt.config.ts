@@ -1,5 +1,4 @@
 import svgLoader from "vite-svg-loader";
-import vitePluginRequire from "vite-plugin-require";
 
 // Social card settings
 const title = 'Fractural';
@@ -107,7 +106,7 @@ export default defineNuxtConfig({
     download: true,
   },
   vite: {
-    plugins: [svgLoader(), vitePluginRequire()]
+    plugins: [svgLoader()]
   },
   css: [
     '@mdi/font/css/materialdesignicons.min.css',

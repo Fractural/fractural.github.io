@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { StyleValue } from 'nuxt/dist/app/compat/capi';
-import { fromURL } from '~/composables/format'
+import { fromURL } from '~/composables/format';
 
 const state = reactive({ headerHeight: 0 });
 const props = defineProps({
@@ -23,9 +23,8 @@ const heroStyle = computed(() => <StyleValue>{
 
 <template>
   <div class="hero" :style="heroStyle">
-    <video v-if="props.video" loop muted autoplay class="hero-bg"
-      :src="require('~/assets/video/hero_montage.mp4')"></video>
-    <img v-if="props.image" class="hero-bg" :src="require(props.image)">
+    <video v-if="props.video" loop muted autoplay class="hero-bg" :src="props.video"></video>
+    <img v-if="props.image" class="hero-bg" :src="props.image">
     <div class="hero-dim"></div>
     <div class="px-16 py-8 hero-content flex justify-center items-center">
       <slot>
