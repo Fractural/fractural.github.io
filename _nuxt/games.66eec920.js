@@ -1,1 +1,0 @@
-import{h as t,o as c,b as a,r,f as n,c as _,w as d}from"./entry.03d24215.js";const f={},l={class:"px-16 py-8"};function i(e,o){return c(),a("div",l,[r(e.$slots,"default",{},()=>[n("Body")])])}const m=t(f,[["render",i]]),p={};function u(e,o){const s=m;return c(),_(s,null,{default:d(()=>[n(" Games page ")]),_:1})}const h=t(p,[["render",u]]);export{h as default};
