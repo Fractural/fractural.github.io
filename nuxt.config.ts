@@ -1,5 +1,3 @@
-import svgLoader from "vite-svg-loader";
-
 // Social card settings
 const title = 'Fractural';
 const description = 'A small indie game developer.';
@@ -90,7 +88,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss', 'nuxt-svgo'],
   googleFonts: {
     families: {
       // Urbanist: {
@@ -106,7 +104,7 @@ export default defineNuxtConfig({
     download: true,
   },
   vite: {
-    plugins: [svgLoader()]
+    plugins: []
   },
   css: [
     '@mdi/font/css/materialdesignicons.min.css',
