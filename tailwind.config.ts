@@ -2,6 +2,16 @@ import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import tailwindTypography from '@tailwindcss/typography';
 
+export const screens = {
+  xs: '320px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
+export type ScreenType = keyof typeof screens | 'all';
+
 const colors = {
   white: '#ffffff',
   'gray-light': `#B6B6B6`,
@@ -11,8 +21,13 @@ const colors = {
 
 export default <Partial<Config>>{
   theme: {
+    screens,
     extend: {
       colors,
+      height: {
+        '128': '32rem',
+        '192': '48rem',
+      },
       letterSpacing: {
         wide: '0.1em',
         wider: '0.25em',
