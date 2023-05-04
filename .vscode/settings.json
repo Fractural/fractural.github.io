@@ -1,3 +1,5 @@
 {
-  "liveServer.settings.root": ".output/public"
+  "liveServer.settings.root": ".output/public",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -103,6 +103,9 @@ export default defineNuxtConfig({
     preload: true,
     download: true,
   },
+  svgo: {
+    defaultImport: "component"
+  },
   vite: {
     plugins: []
   },

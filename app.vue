@@ -13,7 +13,6 @@ const route = useRoute()
 <style lang="scss">
 * {
   font-family: 'Raleway';
-  font-weight: 300;
 }
 
 html,
@@ -21,5 +20,13 @@ body,
 #__nuxt {
   height: 100%;
   min-height: 100%;
+}
+
+a.hover {
+  @apply underline
+}
+
+.text-h1 {
+  @apply text-3xl uppercase mt-16 mb-4 tracking-wide;
 }
 </style>

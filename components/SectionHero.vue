@@ -5,28 +5,28 @@ import { fromURL } from '~/composables/format';
 const state = reactive({ headerHeight: 0 });
 const props = defineProps({
   video: String,
-  image: String
+  image: String,
+  half: Boolean
 })
 
 onMounted(() => {
   const header = document.getElementById('header');
   state.headerHeight = header?.clientHeight ?? 0;
-  console.log(header, state.headerHeight);
 });
 
 const heroStyle = computed(() => <StyleValue>{
-  height: `calc(100vh - ${state.headerHeight}px)`
+  height: `calc(${props.half ? `50vh` : "100vh"} - ${state.headerHeight}px)`
 });
 
 </script>
 
 
 <template>
-  <div class="hero" :style="heroStyle">
-    <video v-if="props.video" loop muted autoplay class="hero-bg" :src="props.video"></video>
-    <img v-if="props.image" class="hero-bg" :src="props.image">
-    <div class="hero-dim"></div>
-    <div class="px-16 py-8 hero-content flex justify-center items-center">
+  <div class="relative" :style="heroStyle">
+    <video v-if="props.video" loop muted autoplay class="absolute w-full h-full object-cover" :src="props.video"></video>
+    <img v-if="props.image" class="absolute w-full h-full object-cover" :src="props.image">
+    <div class="absolute w-full h-full bg-gradient-to-t from-black"></div>
+    <div class="absolute px-16 py-8 flex justify-center items-center w-full h-full">
       <slot>
         <h1>
           Overlay
@@ -35,35 +35,3 @@ const heroStyle = computed(() => <StyleValue>{
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-}
-
-.hero-content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.hero-dim {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: '';
-
-  /* Any overlay color that you want, here I use black with 25% opacity */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 100%)
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-}
-</style>
