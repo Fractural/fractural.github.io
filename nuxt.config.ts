@@ -1,8 +1,7 @@
 // Social card settings
 const title = 'Fractural';
 const description = 'A small indie game developer.';
-const image =
-  'https://play-lh.googleusercontent.com/s05RWD_lCYpZjxoaxEpZFVQU4ClYv3_6_2KTqd1Imm8rMkDIXr-zxh6WlyNOkGOfgguo=w3840-h2160-rw';
+const image = 'https://fracturalstudios.com/meta_banner.png';
 const url = 'https://fracturalstudios.com/';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
