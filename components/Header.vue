@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useBreakpoint, aboveBreakpoint } from '~/composables/useBreakpoint';
-import Logo from '~/assets/svg/logo.svg';
+import LogoRaw from '~/assets/svg/logo.svg';
 import { Bars2Icon } from '@heroicons/vue/20/solid';
 import getHeaderFooterHeight from '~/composables/getHeaderFooterHeight';
 import { StyleValue } from 'nuxt/dist/app/compat/capi';
@@ -43,9 +43,9 @@ const burgerMenuStyle = computed(() => <StyleValue>{
   </Transition>
   <div id="header" class="p-4 sm:p-8 lg:px-16 pb-8 z-10">
     <div class="flex flex-row gap-6">
-      <NuxtLink class="flex flex-row gap-4 hover:text-gray-300 fill-white hover:fill-gray-300" to="/"
+      <NuxtLink class="flex flex-row gap-4 items-center hover:text-gray-300 fill-white hover:fill-gray-300" to="/"
         @click.native="state.hamburgerToggled = false">
-        <Logo class="hidden xs:block flex-shrink-0 w-8 md:w-12 " />
+        <div v-html="LogoRaw" class="hidden xs:block flex-shrink-0 w-8 md:w-12 "></div>
         <h1 class=" md:text-2xl my-auto tracking-widest hover:no-underline">
           FRACTURAL
         </h1>

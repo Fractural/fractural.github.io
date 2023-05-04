@@ -5,9 +5,8 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  import type { DefineComponent } from 'vue';
-  const component: DefineComponent;
-  export default component;
+  const str: string;
+  export default str;
 }
 
 declare module '*?url' {

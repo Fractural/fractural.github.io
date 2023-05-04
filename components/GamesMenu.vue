@@ -35,14 +35,14 @@ const closePopover = (close) => {
     <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
       enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
       leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-      <PopoverPanel class="absolute left-52 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4 drop-shadow-2xl"
+      <PopoverPanel class="absolute left-16 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4 drop-shadow-2xl"
         @mouseover.prevent="popoverHover = true" @mouseleave.prevent="closePopover(close)">
         <div class="w-screen max-w-md flex flex-col flex-auto overflow-hidden bg-black text-sm leading-6 shadow-lg">
           <div v-for="item in games" :key="item.title"
-            class="group relative flex hover:bg-gray-700 h-full group transition-all duration-200 ease-out">
-            <div class="w-32 overflow-hidden">
+            class="group relative flex hover:bg-gray-700 h-32 group transition-all duration-200 ease-out">
+            <div class="w-32 h-32 overflow-hidden flex-shrink-0">
               <img :src="item.image"
-                class="transition-all duration-200 ease-out scale-100 group-hover:scale-105 object-cover w-32 h-full">
+                class="transition-all duration-200 ease-out scale-100 group-hover:scale-105 object-cover w-full h-full">
             </div>
             <div class="py-4 px-8">
               <a :href="item.url" target="_blank" class="font-semibold text-white">

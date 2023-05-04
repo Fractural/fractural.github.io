@@ -104,10 +104,10 @@ export default defineNuxtConfig({
     download: true,
   },
   svgo: {
-    defaultImport: "component"
+    defaultImport: 'raw',
   },
   vite: {
-    plugins: []
+    plugins: [],
   },
   css: [
     '@mdi/font/css/materialdesignicons.min.css',
@@ -117,6 +117,17 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  hooks: {
+    'webpack:config'(configs) {
+      // in here you can find 2 config related to "client" and "server"
+
+      // example for client config
+      const module = configs[0]?.module;
+
+      // you can see all configs
+      console.log(configs);
     },
   },
 });

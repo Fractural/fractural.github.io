@@ -4,6 +4,7 @@ import tailwindTypography from '@tailwindcss/typography';
 
 export const screens = {
   xs: '320px',
+  xsm: '400px',
   sm: '640px',
   md: '768px',
   lg: '1024px',
