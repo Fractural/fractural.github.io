@@ -39,10 +39,8 @@ export const aboveBreakpoint = (
 };
 
 const getBreakpoint = (w: number) => {
-  console.log('screens ', screens.entries());
   for (let [key, cutoff] of screens) {
     if (w < cutoff) {
-      console.log('found ', w, ' ', cutoff);
       return key;
     }
   }
