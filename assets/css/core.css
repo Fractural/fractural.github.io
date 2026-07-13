@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-raleway: 'Raleway', sans-serif;
+
+  --breakpoint-xs: 20rem;
+  --breakpoint-xsm: 25rem;
+
+  --tracking-wide: 0.1em;
+  --tracking-wider: 0.25em;
+  --tracking-widest: 0.5em;
+
+  --text-9xl: 9rem;
+  --text-10xl: 10rem;
+}
+
+#__nuxt {
+  font-family: 'Raleway', sans-serif;
+  height: 100%;
+  min-height: 100%;
+}
+
+a.hover {
+  @apply underline;
+}
+
+.text-h1 {
+  @apply text-3xl uppercase mt-16 mb-4 tracking-wide;
+}
+
+.text-section-title {
+  @apply text-3xl pb-4 tracking-wide font-bold uppercase;
+}
+
+@media (min-width: 640px) {
+  .text-section-title {
+    @apply text-5xl font-medium tracking-wider;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-section-title {
+    @apply text-6xl;
+  }
+}

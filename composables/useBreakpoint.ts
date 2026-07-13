@@ -1,24 +1,32 @@
-import { onMounted, reactive } from 'vue';
-import { screens as tailwindScreens, ScreenType } from '~/tailwind.config';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
-let screens = new Map<ScreenType, number>();
+export const screens = {
+  xs: '320px',
+  xsm: '400px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
+export type ScreenType = keyof typeof screens | 'all';
 
-if (tailwindScreens) {
-  for (const [key, value] of Object.entries(tailwindScreens)) {
-    screens.set(<ScreenType>key, parseInt(value));
-  }
+let screenMap = new Map<ScreenType, number>();
+
+for (const [key, value] of Object.entries(screens)) {
+  screenMap.set(<ScreenType>key, parseInt(value));
 }
 
 // Sort by smallest to largest
-screens = new Map<ScreenType, number>(
-  [...screens.entries()].sort((a, b) => a[1] - b[1])
+screenMap = new Map<ScreenType, number>(
+  [...screenMap.entries()].sort((a, b) => a[1] - b[1])
 );
 
 // Use the smallest value by default
 const breakpoints = reactive({
   w: 0,
   h: 0,
-  is: screens.keys().next().value as ScreenType,
+  is: screenMap.keys().next().value as ScreenType,
 });
 
 export const belowBreakpoint = (
@@ -35,11 +43,11 @@ export const aboveBreakpoint = (
   if (target == 'all' && reference == 'all') return true;
   if (target == 'all' && reference != 'all') return false;
   if (target != 'all' && reference == 'all') return true;
-  return (screens.get(target) ?? 0) < (screens.get(reference) ?? 0);
+  return (screenMap.get(target) ?? 0) < (screenMap.get(reference) ?? 0);
 };
 
 const getBreakpoint = (w: number) => {
-  for (let [key, cutoff] of screens) {
+  for (let [key, cutoff] of screenMap) {
     if (w < cutoff) {
       return key;
     }

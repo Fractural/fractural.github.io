@@ -1,7 +1,5 @@
-
 <script setup>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 import { ref } from 'vue'
 import games from '~/composables/games';
 
@@ -29,7 +27,7 @@ const closePopover = (close) => {
       class="inline-flex items-center gap-x-1 text-xl tracking-wider font-medium text-white hover:text-gray-300"
       @mouseover="(e) => hoverPopover(e, open)" @mouseleave="closePopover(close)">
       <span>GAMES</span>
-      <ChevronDownIcon class="h-5 w-5" aria-hidden="true" />
+      <Icon name="mdi:chevron-down" size="20" aria-hidden="true" />
     </PopoverButton>
 
     <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"

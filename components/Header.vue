@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { useBreakpoint, aboveBreakpoint } from '~/composables/useBreakpoint';
-import LogoRaw from '~/assets/svg/logo.svg';
-import { Bars2Icon } from '@heroicons/vue/20/solid';
+import LogoRaw from '~/assets/svg/logo.svg?raw';
 import getHeaderFooterHeight from '~/composables/getHeaderFooterHeight';
-import { StyleValue } from 'nuxt/dist/app/compat/capi';
 
 const links = [
   "about"
@@ -20,9 +18,9 @@ watchEffect(() => {
 });
 
 const { headerHeight } = getHeaderFooterHeight();
-const burgerMenuStyle = computed(() => <StyleValue>{
+const burgerMenuStyle = computed(() => ({
   top: `${headerHeight.value}px`,
-});
+}));
 </script>
 
 <template>
@@ -62,7 +60,7 @@ const burgerMenuStyle = computed(() => <StyleValue>{
         <div class="md:hidden flex flex-row w-full">
           <span class="flex-auto"></span>
           <button @click="state.hamburgerToggled = !state.hamburgerToggled">
-            <Bars2Icon class="w-8 h-8" />
+            <Icon name="mdi:menu" size="32" />
           </button>
         </div>
         <div>

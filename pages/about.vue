@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { LinkIcon } from '@heroicons/vue/20/solid';
 import profileImage from '~/assets/images/profile.png';
 
 const members = [
@@ -23,10 +22,7 @@ const members = [
       <h1 class="text-h1">MISSION</h1>
       <p>To build polished and immersive experiences that are fun and fair</p>
       <h1 class="text-h1">TEAM</h1>
-      <div
-        v-for="member in members"
-        class="mt-8 flex flex-row gap-x-4 gap-y-8 flex-wrap"
-      >
+      <div v-for="member in members" class="mt-8 flex flex-row gap-x-4 gap-y-8 flex-wrap">
         <img class="rounded-full w-32 h-32" :src="member.image" />
         <div class="flex flex-col gap-4 flex-1" style="min-width: 17em">
           <div class="flex flex-row gap-4 flex-wrap">
@@ -35,7 +31,7 @@ const members = [
               member.role
             }}</span>
             <a class="px-4" :href="member.url" target="_blank">
-              <LinkIcon class="w-4 h-4 mr-2 inline-block" />
+              <Icon name="mdi:link" size="16" class="mr-2 inline-block" />
               <span>{{ member.url }}</span>
             </a>
           </div>
